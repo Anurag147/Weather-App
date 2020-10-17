@@ -7,6 +7,7 @@ const forecast = require('./utils/forecast');
 
 //Initialize web server through express js
 const app = express();
+const port = process.env.PORT || 3000; //Choose 3000 port when running locally
 
 //Use handle bars for dynamic templating, ensure the key name below is set correctly as view engine
 const templatesFilePath = path.join(__dirname,"../templates/views");
@@ -72,7 +73,7 @@ app.get('*',(req,res)=>{
 });
 
 //Start Express web server at port no. 3000 
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log('Server is up on port 3000');
 });
 
